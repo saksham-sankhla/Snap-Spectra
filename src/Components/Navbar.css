@@ -1,0 +1,43 @@
+.nav-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-logo-container{
+    padding: 27px 64px 27px 150px;  
+  }
+  
+  .nav-logo{
+    font-family: Pattaya;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0px 0px;
+    line-height: normal;
+  }
+  
+  .nav-search-container{
+   padding: 29px 27px 25px 0px;
+  }
+  
+  .nav-button{
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .nav-button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .nav-themeBtn{
+    padding: 41px 150px 41px 0px;
+  }

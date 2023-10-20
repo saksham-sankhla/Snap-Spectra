@@ -1,0 +1,13 @@
+.search-container{
+
+}
+
+.search-input{
+width: 419px;
+height: 43px;
+flex-shrink: 0;
+border-radius: 6px;
+border: 1px solid #ECECEC;
+background: #FAFAFA;
+box-shadow: 0px 4px 19px 0px rgba(0, 0, 0, 0.05) inset;
+}
