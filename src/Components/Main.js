@@ -17,33 +17,28 @@ export default function Main() {
 
   const handleSearch = () => {
 
-    const apiUrl = `https://api.unsplash.com/search/photos/?query=${searchInput}&page=1&per_page=30`;
+    const apiUrl = `https://api.unsplash.com/search/photos/?query=${searchInput}&page=1&per_page=30&client_id=${accessKey}`;
 
-    fetch(apiUrl, {
-      headers: {
-        'Authorization': `Client-ID ${accessKey}`
-      }
-    })
+    fetch(apiUrl)
     .then(response => {
       if (!response.ok) {
         throw new Error('HTTP Error!')
       }
       return response.json()
     })
-    .then (data => {(setSearchResults(data.results))})
+    .then (data => {(setSearchResults({data}))})
     .catch(error => {
       console.error('Error fetching data from Unsplash:', error);
     });
   }
-
-  console.log(searchResults)
+  console.log('main', searchResults)
 
   
   return (
     <div className='main-container'>
         <Navbar onChange={inputHandler} onClick={handleSearch}/>
         <Banner onChange={inputHandler} onClick={handleSearch}/>
-        <Card  />
+        <Card />
     </div>
   )
 }

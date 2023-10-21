@@ -6,7 +6,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 
 export default function Search(props){
 
-console.log('search props', props)
+
 
   // const [searchInput, setSearchInput] = useState('')
   // const [searchResults, setSearchResults] = useState([])
