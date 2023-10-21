@@ -3,7 +3,7 @@ import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import './CardComp.css'
 
 export default function CardComp({item}) {
-    console.log(item)
+
   return (
     <div className='card-wrapper'>
         <img alt='' src={item.urls.thumb} className='thumbnail' />

@@ -2,7 +2,7 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import Search from "./Search";
 import "./Navbar.css";
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <div className="nav-container">
       <div className="nav-logo-container">
@@ -10,7 +10,7 @@ export default function Navbar() {
       </div>
 
       <div className="nav-search-container">
-        <Search />
+        <Search item={props}/>
       </div>
 
       <div className="nav-button-container">
