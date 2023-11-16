@@ -5,8 +5,6 @@ import Navbar from './Navbar'
 import { useState } from 'react'
 
 export default function Main() {
-  console.log('main')
-
   const [searchInput, setSearchInput] = useState('')
   const [searchResults, setSearchResults] = useState([])
 
@@ -17,7 +15,6 @@ export default function Main() {
   }
 
   const handleSearch = () => {
-    console.log('handleSearch called')
     const apiUrl = `https://api.unsplash.com/search/photos/?query=${searchInput}&page=1&per_page=30&client_id=${accessKey}`;
 
     fetch(apiUrl)
@@ -27,7 +24,7 @@ export default function Main() {
       }
       return response.json()
     })
-    .then (data => {(setSearchResults({data}))})
+    .then (data => {setSearchResults(data.results)})
     .catch(error => {
       console.error('Error fetching data from Unsplash:', error);
     });

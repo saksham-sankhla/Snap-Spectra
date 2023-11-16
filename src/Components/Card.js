@@ -1,21 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect } from 'react'
 import { dummyData } from './dummy'
 import CardComp from './CardComp'
 import './Card.css'
 
 export default function Card(props) {
-
-  console.log('card rendered')
-    // const incomingData = props.searchResults.length > 0 ? props.searchResults : dummyData;
-
     const [images, setImages] = useState(dummyData)
 
-    const incomingData = props.searchResults
+    //console.log("Images from card", images)
+    console.log("props from card", props)
 
-    if(props.searchResults.length > 0){
-      console.log('set image fn ran')
-      setImages(incomingData)
-    }
+    useEffect(() => {
+      if (props.searchResults.length > 0) {
+        console.log('set image fn ran');
+        setImages(props.searchResults);
+      } else {
+        // Reset to dummyData when searchResults is empty
+        setImages(dummyData);
+      }
+    }, [props.searchResults]);
+  
 
   return (
     <div className='card-container'>
