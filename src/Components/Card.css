@@ -1,7 +1,7 @@
 .card-container{
     padding: 36px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    columns: 5 200px;
+    column-gap: 40px;
+    width: 90%;
+    margin: auto;
 }
