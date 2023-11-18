@@ -14,8 +14,9 @@ export default function Main() {
     setSearchInput(event.target.value)
   }
 
-  const handleSearch = () => {
-    const apiUrl = `https://api.unsplash.com/search/photos/?query=${searchInput}&page=1&per_page=30&client_id=${accessKey}`;
+  const handleSearch = (event) => {
+    if(event.key === 'Enter'){
+      const apiUrl = `https://api.unsplash.com/search/photos/?query=${searchInput}&page=1&per_page=30&client_id=${accessKey}`;
 
     fetch(apiUrl)
     .then(response => {
@@ -28,12 +29,13 @@ export default function Main() {
     .catch(error => {
       console.error('Error fetching data from Unsplash:', error);
     });
+    }
   }
   
   return (
     <div className='main-container'>
-        <Navbar onChange={inputHandler} onClick={handleSearch} />
-        <Banner onChange={inputHandler} onClick={handleSearch} />
+        <Navbar onChange={inputHandler} onKeyDown={handleSearch} />
+        <Banner onChange={inputHandler} onKeyDown={handleSearch} />
         {searchResults ? <Card searchResults={searchResults} /> : <Card />}
     </div>
   )

@@ -41,7 +41,7 @@ export default function Search(props){
 
   return(
     <div className='search-container'>
-      <Input type='search' id='nav-search' onChange={(event) => props.item.onChange(event)} onClick={props.item.onClick} placeholder='Search images here' className='search-input'
+      <Input type='search' id='nav-search' onChange={(event) => props.item.onChange(event)} onKeyDown={props.item.onKeyDown} placeholder='Search images here' className='search-input'
       startAdornment={
         <InputAdornment position="start">
               <SearchIcon />
