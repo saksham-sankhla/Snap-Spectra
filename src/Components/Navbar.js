@@ -6,7 +6,7 @@ export default function Navbar(props) {
   return (
     <div className="nav-container">
       <div className="nav-logo-container">
-        <h1 className='nav-logo'>Image Gallery</h1>
+        <h1 className='nav-logo'>Snap Spectra</h1>
       </div>
 
       <div className="nav-search-container">
