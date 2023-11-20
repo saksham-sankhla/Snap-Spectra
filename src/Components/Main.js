@@ -2,7 +2,9 @@ import React from 'react'
 import Banner from './Banner'
 import Card from './Card'
 import Navbar from './Navbar'
+import Popup from './Popup'
 import { useState } from 'react'
+
 
 export default function Main() {
   const [searchInput, setSearchInput] = useState('')
@@ -33,10 +35,11 @@ export default function Main() {
   }
   
   return (
-    <div className='main-container'>
-        <Navbar onChange={inputHandler} onKeyDown={handleSearch} />
-        <Banner onChange={inputHandler} onKeyDown={handleSearch} />
-        {searchResults ? <Card searchResults={searchResults} /> : <Card />}
-    </div>
+    // <div className='main-container'>
+    //     <Navbar onChange={inputHandler} onKeyDown={handleSearch} />
+    //     <Banner onChange={inputHandler} onKeyDown={handleSearch} />
+    //     {searchResults ? <Card searchResults={searchResults} /> : <Card />}
+    // </div>
+    <Popup />
   )
 }
