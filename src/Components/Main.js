@@ -2,13 +2,14 @@ import React from 'react'
 import Banner from './Banner'
 import Card from './Card'
 import Navbar from './Navbar'
-import Popup from './Popup'
+// import Popup from './Popup'
 import { useState } from 'react'
 
 
 export default function Main() {
   const [searchInput, setSearchInput] = useState('')
   const [searchResults, setSearchResults] = useState([])
+  const [selectedImg, setSelectedImg] = useState('')
 
   const accessKey = process.env.REACT_APP_API_KEY
 
@@ -33,13 +34,19 @@ export default function Main() {
     });
     }
   }
+
+  const handleImgClick = (item) => {
+    setSelectedImg(item)
+  }
+
+  console.log('image clicked', selectedImg)
   
   return (
-    // <div className='main-container'>
-    //     <Navbar onChange={inputHandler} onKeyDown={handleSearch} />
-    //     <Banner onChange={inputHandler} onKeyDown={handleSearch} />
-    //     {searchResults ? <Card searchResults={searchResults} /> : <Card />}
-    // </div>
-    <Popup />
+    <div className='main-container'>
+        <Navbar onChange={inputHandler} onKeyDown={handleSearch} />
+        <Banner onChange={inputHandler} onKeyDown={handleSearch} />
+        {searchResults ? <Card onClick={(handleImgClick)} searchResults={searchResults} /> : <Card onClick={(handleImgClick)} />}
+    </div>
+    // <Popup />
   )
 }

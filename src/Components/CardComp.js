@@ -2,10 +2,10 @@ import React from 'react'
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import './CardComp.css'
 
-export default function CardComp({item}) {
-console.log(item)
+export default function CardComp({item , onClick}) {
+
   return (
-    <div className='card-wrapper'>
+    <div className='card-wrapper' onClick={() => onClick(item)}>
         <img alt='' src={item.urls.small_s3} className='thumbnail' />
         
         <div className='user-info-wrapper'>
