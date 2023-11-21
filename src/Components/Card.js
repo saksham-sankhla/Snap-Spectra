@@ -18,7 +18,7 @@ export default function Card(props) {
   return (
     <div className='card-container'>
       {images.map((item) => {
-        return <CardComp item={item} />
+        return <CardComp item={item} onClick={props.onClick} />
       })}
     </div>
   )
