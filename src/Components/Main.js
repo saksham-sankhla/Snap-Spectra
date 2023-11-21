@@ -2,7 +2,7 @@ import React from 'react'
 import Banner from './Banner'
 import Card from './Card'
 import Navbar from './Navbar'
-// import Popup from './Popup'
+import Popup from './Popup'
 import { useState } from 'react'
 
 
@@ -39,6 +39,10 @@ export default function Main() {
     setSelectedImg(item)
   }
 
+  const closePopup = () =>{
+    setSelectedImg('')
+  }
+
   console.log('image clicked', selectedImg)
   
   return (
@@ -46,7 +50,9 @@ export default function Main() {
         <Navbar onChange={inputHandler} onKeyDown={handleSearch} />
         <Banner onChange={inputHandler} onKeyDown={handleSearch} />
         {searchResults ? <Card onClick={(handleImgClick)} searchResults={searchResults} /> : <Card onClick={(handleImgClick)} />}
+        {selectedImg && <Popup item={selectedImg} closePopup={closePopup}/>}
     </div>
+        
     // <Popup />
   )
 }

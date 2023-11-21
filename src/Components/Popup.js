@@ -1,11 +1,14 @@
 import React from 'react'
+import './Popup.css'
 
-export default function Popup() {
+export default function Popup({item, closePopup}) {
+    console.log('in popup',item)
   return (
-    <div className='popup-container'>
-
+    <div className='popup-container' >
+        <span><button onClick={closePopup}>Close</button></span>
+        <div className='popup-wrapper'>
         <div className='img-container'>
-            <img src='./media/mountain.jpg' alt='clicked img' className='popup-img'/>
+            <img src={item.urls.small} alt={item.urls.alt_description} className='popup-img'/>
 
             <div className='img-btn-container'>
                 <button className='btn-simple'>Share</button>
@@ -16,12 +19,11 @@ export default function Popup() {
 
         <div className='info-container'>
 
-            <img src='https://images.unsplash.com/profile-1679489218992-ebe823c797dfimage?ixlib=rb-4.0.3&crop=faces&fit=crop&w=32&h=32' alt='user img' className='user-img'/>
-
             <div className='user-wrapper'>
+            <img src={item.user.profile_image.medium} alt='user img' className='user-img'/>
                 <div className='user-container'>
-                    <h3 className='user-fullname'> Jacob Jones</h3>
-                    <p className='user-username'>@jacobclicks</p>
+                    <h3 className='user-fullname'>{item.user.name}</h3>
+                    <p className='user-username'>@{item.user.username}</p>
                 </div>
                 
                 <div className='user-social-container'>
@@ -31,7 +33,7 @@ export default function Popup() {
 
                 <div className='user-stats-container'>
                     <p className='user-stats'>downloads</p>
-                    <p className='user-stats'>likes</p>
+                    <p className='user-stats'>{item.likes}</p>
                 </div>
             </div>
 
@@ -44,5 +46,7 @@ export default function Popup() {
 
         </div>
     </div>
+</div>
+        
   )
 }
