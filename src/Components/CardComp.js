@@ -1,6 +1,6 @@
 import React from 'react'
-import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import './CardComp.css'
+import { ThumbUp } from '@mui/icons-material';
 
 export default function CardComp({item , onClick}) {
 
@@ -18,7 +18,7 @@ export default function CardComp({item , onClick}) {
             </div>
 
             <div className='likes-container'>
-                <ThumbUpOffAltIcon />
+            <ThumbUp style={{width: '18px' , height: '15px'}} />
                 <div className='likes-number'>{item.likes}</div>
             </div>
         </div>

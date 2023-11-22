@@ -19,35 +19,50 @@
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-}
-
-.img-container{
-    max-height: 75%;
     position: relative;
 }
 
+.img-container{
+    position: relative;
+    width: 100%;
+}
+
 .popup-img{
-    max-width: 100%;
-    max-width: 100%;
+    width: 100%;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+    max-height: 60vh;
 }
 
 .img-btn-container{
     position: absolute;
     display: flex;
     flex-direction: row;
-    align-items:end;
+    align-items: flex-end;
+    justify-content: space-between;
     width: 100%;
-    height: 100%;
-    top: 0
-    ;
+    height: 98%;
+    top: 0;
+    left: 0;
 }
 
-/* btn-simple
-btn-simple*/
+.btn-simple{
+    background-color: rgba(20, 25, 26, 0.8);
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-family: poppins;
+}
+
 .btn-themed{
     margin-left: auto;
+    background-color: rgba(0, 137, 0, 0.9);
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    font-family: poppins;
 } 
 .info-container{
     display: flex;
@@ -64,18 +79,65 @@ btn-simple*/
 .user-wrapper{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    padding: 5px;
 }
 
-/* user-container
-user-fullname
-user-username
-user-social-container
-user-social
-user-social
-user-stats-container
-user-stats
-user-stats
-tags-wrapper
+.user-container{
+
+}
+
+.user-fullname{
+    margin: 0;
+}
+
+.user-username{
+    margin: 0;
+    color: #635f5f;
+    font-family: Poppins;
+    font-style: italic;
+}
+
+.user-social-container{
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user-social{
+    color: #A7A7A7;
+    font-family: Poppins;
+    font-size: 10px;
+    font-style: italic;
+    font-weight: 600;
+
+}
+
+.user-stats-container{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.user-stats{
+    font-size: small;
+    margin: 0;
+}
+
+.close-btn{
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    z-index: 99;
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* tags-wrapper
 tags-header
 tags-container
-tag */ 
+tag */
